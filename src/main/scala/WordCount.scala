@@ -14,12 +14,12 @@ object SparkWordCount {
     val counts = text.flatMap(line => line.split(" "))
       .map(word => (word, 1))
       .reduceByKey(_ + _)
-    val arr = counts.collect()
-    //counts.saveAsTextFile("/output")
-    counts.coalesce(1).saveAsTextFile("/output")
+    //val arr = counts.collect()
+    counts.saveAsTextFile("/output")
+    //counts.coalesce(1).saveAsTextFile("/output")
     //counts.coalesce(1).saveAsTextFile("/output-" + start_time)
     System.out.println("Output saved in HDFS under /output")
-    System.out.println("Number of words : " + arr.length)
+    //System.out.println("Number of words : " + arr.length)
     val duration = System.currentTimeMillis() - start_time
     System.out.println("Total execution time: " + duration)
   }
