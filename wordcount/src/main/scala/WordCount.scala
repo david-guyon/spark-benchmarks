@@ -1,7 +1,7 @@
 import org.apache.spark.SparkContext
 import org.apache.spark.SparkConf
 
-object SparkWordCount {
+object WordCount {
   def main(args: Array[String]) {
     // checking <input file> parameter
     if(args.length == 0) {
