@@ -24,7 +24,7 @@ with open(input_file, 'w') as f:
         current_size_mb = f.tell() / 1024 / 1024
         if int(current_size_mb) > int(last_size_mb):
             print(" - %s is %dMB" % (input_file, current_size_mb))
-        if current_size_mb > desired_size_mb:
+        if current_size_mb >= desired_size_mb:
             break
         value = randint(0, 1000000000)
         f.write("%d\n" % value)
