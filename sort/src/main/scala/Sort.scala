@@ -22,8 +22,8 @@ object Sort {
     // val sort = text.sortBy(f => { f.split("\n")(0)}, true, 10)
 
     // save output to HDFS
-    sort.saveAsTextFile("/outfile")               // multiple files
-    //sort.coalesce(1).saveAsTextFile("/outfile") // single file
+    sort.saveAsTextFile("/output")                // multiple files
+    //sort.coalesce(1).saveAsTextFile("/output")  // single file
     System.out.println("Output saved in HDFS under /output")
 
     // print total duration
