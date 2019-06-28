@@ -6,7 +6,7 @@ This repository provides two well-known benchmarks: _wordcount_ and _sort_. They
 
 To compile the wordcount  benchmark, move to the _wordcount_ folder and execute `mvn package`. If everything went well, you should see _wordcount-1.0-SNAPSHOT.jar_ in the _target_ folder.
 
-This benchmark is using HDFS to get its input file. Therefore, you need to upload the input file in HDFS with `hdfs dfs -put input.txt /`. Of course, you can change _input.txt_ with whatever you'd like.
+This benchmark is using HDFS to get its input file. Therefore, you need to upload the input file (available in the directory) in HDFS with `hdfs dfs -put input.txt /`. Of course, you can change _input.txt_ with whatever you'd like.
 
 Hereafter a couple of HDFS commands you can use to check your input file:
 ```
@@ -28,7 +28,7 @@ hdfs dfs -rm -r /outfile
 
 To compile the sort benchmark, move to the _sort_ folder and execute `mvn package`. If everything went well, you should see _sort-1.0-SNAPSHOT.jar_ in the _target_ folder.
 
-This benchmark is using HDFS to get its input file. Therefore, you need to upload the input file in HDFS with `hdfs dfs -put input.txt /`. Of course, you can change _input.txt_ with whatever you'd like.
+This benchmark is using HDFS to get its input file. Therefore, you need to upload the input file in HDFS with `hdfs dfs -put input.txt /`. You can generate this file with the python script `./gen-input.py`. The script creates an input file of 10MB by default. Feel free to change the varibales to create a file with the size you want. Of course, you can also change _input.txt_ with whatever you'd like. 
 
 Hereafter a couple of HDFS commands you can use to check your input file:
 ```
