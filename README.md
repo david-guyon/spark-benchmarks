@@ -45,3 +45,5 @@ At the end of the execution, the ouput files are located within HDFS. If you'd l
 ```
 hdfs dfs -rm -r /outfile
 ```
+
+## HiBench Sort

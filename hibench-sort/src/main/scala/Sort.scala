@@ -30,7 +30,8 @@ object Sort {
 
     // HiBench-like sort phase
     val partitioner = new HashPartitioner(partitions = parallel/2)
-    val sort = text.flatMap(line => line.split(" ")).map((_, 1)).sortByKeyWithPartitioner(partitioner = partitioner).map(_._1)
+    //val sort = text.flatMap(line => line.split(" ")).map((_, 1)).sortByKeyWithPartitioner(partitioner = partitioner).map(_._1)
+    val sort = text.map((_, 1)).sortByKeyWithPartitioner(partitioner = partitioner).map(_._1)
 
     val io = new IOCommon(sc)
     io.save("/output", sort)

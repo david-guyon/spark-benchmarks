@@ -46,9 +46,8 @@ class IOCommon(val sc:SparkContext) {
    }
 
    def save(filename:String, data:RDD[_], prefix:String) = {
-     val output_format = IOCommon.getProperty(prefix).getOrElse("Text")
-     val output_format_codec =
-       loadClassByName[CompressionCodec](IOCommon.getProperty(prefix + ".codec"))
+     val output_format = "Sequence"
+     val output_format_codec = loadClassByName[CompressionCodec](None)
 
      output_format match {
        case "Text" =>
