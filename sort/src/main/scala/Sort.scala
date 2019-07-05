@@ -18,7 +18,7 @@ object Sort {
     val text = sc.textFile("hdfs:/" + args(0))
 
     // sort phase
-    val sort = text.sortBy(f => { f.toInt}, true, 10)
+    val sort = text.sortBy(f => { f.toInt}, ascending = true)
     // val sort = text.sortBy(f => { f.split("\n")(0)}, true, 10)
 
     // save output to HDFS
