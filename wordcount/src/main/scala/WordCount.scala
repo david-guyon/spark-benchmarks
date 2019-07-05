@@ -14,7 +14,7 @@ object WordCount {
     val sc = new SparkContext(new SparkConf())
 
     // getting input file from HDFS
-    val text = sc.textFile("hdfs:/" + args(0)) 
+    val text = sc.textFile("hdfs:/" + args(0) + "/part-*") 
 
     // map-reduce phase
     val counts = text.flatMap(line => line.split(" "))
